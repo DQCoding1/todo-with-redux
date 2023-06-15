@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux"
 import { addTodo } from "../redux/todoSlice";
+import { useAppDispatch } from "../redux/Hooks";
 
 const AddTodoForm = () => {
   const [inputValue, setInputValue] = useState<string>("");
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);

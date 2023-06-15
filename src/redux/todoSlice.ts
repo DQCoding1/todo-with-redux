@@ -1,10 +1,11 @@
 import { createSlice} from "@reduxjs/toolkit"
-
-const initialState = [
+import { TodoInterface } from "../interfaces"
+ 
+const initialState : Array<TodoInterface>= [
   {
     id: 1,
     title: "buy a new computer",
-    completed: false,
+    completed: true,
   },
   {
     id: 2,
@@ -15,7 +16,7 @@ const initialState = [
     id: 3,
     title: "take a break",
     completed: false,
-  }
+  },
 ]
 
 const todoSlice = createSlice({
