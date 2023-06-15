@@ -1,0 +1,36 @@
+.form{
+  width: 50%;
+  margin: 0 auto;
+  background-color: grey;
+  display: flex;
+}
+
+.form__inputText{
+  flex-grow: 1;
+  padding: .5rem;
+  background-color: rgb(85, 84, 84);
+  color: aliceblue;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+
+.form__inputText::placeholder{
+  color: rgb(179, 179, 179);
+}
+
+.form__inputText:focus{
+  box-shadow: 2px 2px 5px rgb(5, 5, 5);
+}
+
+.form__inputSubmit{
+  padding: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: 500ms;
+}
+
+.form__inputSubmit:hover{
+  cursor: pointer; 
+}

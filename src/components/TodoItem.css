@@ -1,0 +1,26 @@
+.todo{
+  width: 100%;
+  display: flex;
+  border: 2px solid rgb(192, 194, 195);
+  padding: .5rem 1rem;
+
+}
+
+.todo__checkbox:hover{
+  cursor: pointer;
+}
+
+.todo__title{
+  width: 85%;
+  text-align: center;
+}
+
+.todo_delete{
+  width: 15%;
+  padding: .2rem .5rem;
+  font-family: inherit;
+}
+
+.todo_delete:hover{
+  cursor: pointer;
+}
