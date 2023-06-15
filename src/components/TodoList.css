@@ -6,3 +6,22 @@
   margin: 0 auto;
   margin-top: 2rem;
 }
+
+.todos__deleteAll{
+  background-color: aliceblue;
+  width: max-content;
+  padding: .2rem .5rem;
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: 200ms;
+}
+
+.todos__deleteAll:hover{
+  cursor: pointer;
+  background-color: rgb(182, 36, 36);
+  color: aliceblue;
+}

@@ -28,9 +28,13 @@
   padding: .5rem;
   font-family: inherit;
   font-weight: 500;
-  transition: 500ms;
+  border: none;
+  outline: none;
+  transition: 200ms;
 }
 
 .form__inputSubmit:hover{
   cursor: pointer; 
+  background-color: rgb(25, 151, 25);
+  color: aliceblue;
 }
