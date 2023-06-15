@@ -1,7 +1,7 @@
-import { createSlice} from "@reduxjs/toolkit"
-import { TodoInterface } from "../interfaces"
- 
-const initialState : Array<TodoInterface>= [
+import { createSlice } from "@reduxjs/toolkit";
+import { TodoInterface } from "../interfaces";
+
+let initialState: Array<TodoInterface> = [
   {
     id: 1,
     title: "buy a new computer",
@@ -17,22 +17,28 @@ const initialState : Array<TodoInterface>= [
     title: "take a break",
     completed: false,
   },
-]
+];
 
 const todoSlice = createSlice({
-  name : "todos",
+  name: "todos",
   initialState,
   reducers: {
     addTodo: (state, action) => {
       const newTodo = {
         id: Date.now(),
         title: action.payload.title,
-        completed: false
-      }
-      state.push(newTodo)
-    }
-  }
-})
+        completed: false,
+      };
+      state.push(newTodo);
+    },
 
-export const { addTodo } = todoSlice.actions
-export default todoSlice.reducer
+    toggleCompleted: (state, action) => {
+      return state.map((todo) =>
+        todo.id === action.payload.id ? action.payload : todo
+      );
+    },
+  },
+});
+
+export const { addTodo, toggleCompleted } = todoSlice.actions;
+export default todoSlice.reducer;
