@@ -1,16 +1,24 @@
 import { TodoInterface } from "../interfaces";
 import { useAppDispatch } from "../redux/Hooks";
-import { toggleCompleted } from "../redux/todoSlice";
+import { toggleCompleted, deleteTodo } from "../redux/todoSlice";
 import "./TodoItem.css";
 
 const TodoItem = (data: TodoInterface) => {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(toggleCompleted({
-      id: data.id,
-      title: data.title,
-      completed: e.target.checked
+    dispatch(
+      toggleCompleted({
+        id: data.id,
+        title: data.title,
+        completed: e.target.checked,
+      })
+    );
+  };
+
+  const handleDeleteTodo = () => {
+    dispatch(deleteTodo({
+      id: data.id
     }))
   };
 
@@ -23,7 +31,9 @@ const TodoItem = (data: TodoInterface) => {
         checked={data.completed ? true : false}
       />
       <p className="todo__title">{data.title}</p>
-      <button className="todo_delete">Delete</button>
+      <button className="todo_delete" onClick={handleDeleteTodo}>
+        Delete
+      </button>
     </li>
   );
 };
