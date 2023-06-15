@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addTodo } from "../redux/todoSlice";
 import { useAppDispatch } from "../redux/Hooks";
-import "./AddTodoForm.css"
+import "./AddTodoForm.css";
 
 const AddTodoForm = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -13,11 +13,16 @@ const AddTodoForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(
-      addTodo({
-        title: inputValue,
-      })
-    );
+    if (inputValue.trim() !== "") {
+      dispatch(
+        addTodo({
+          title: inputValue,
+        })
+      );
+      setInputValue("");
+    } else {
+      alert("INPUTS CAN NOT BE EMPTY");
+    }
   };
 
   return (
